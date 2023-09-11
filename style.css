@@ -1,0 +1,185 @@
+@font-face{
+    font-family: "press_start";
+    src: url("./press_start.ttf")format("woff2")
+}
+
+body {
+    font-family:"press_start", sans-serif;
+    image-rendering: pixelated;
+    background-color: rgb(0, 0, 0);
+}
+
+.game-container {
+
+    text-align: center;
+    align-self: center;
+    border: solid;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#p1-puntos{
+
+    position: absolute;
+    left:-36px;
+    top:12px;
+    font-size:6px;
+    letter-spacing: -0px;
+    width:32px;
+    text-align: left;
+    color:white;
+    background-color:rgb(0, 0, 0); 
+    height:8px; 
+}
+
+
+#p2-puntos{
+    position: absolute;
+    top: 30px;
+    width:30px;
+    left:156px;
+    text-align: left;
+    font-size:6px;
+    letter-spacing: -0px;
+    width:32px;
+    text-align: left;
+    color:white;
+    background-color:rgb(0, 0, 0); 
+    height:8px;
+}
+
+
+.game-window {
+    background-color: rgb(160, 11, 11);
+    position: relative;
+    margin:0px;
+    width: 256px;
+    height: 224px;
+ 
+}
+
+#paquete-centro {
+    position: absolute;
+    top: 80px;
+    left: 32px;
+    width: auto;
+    height: auto;
+    transform-origin: 0px 0px;
+}
+
+#vida-centro {
+    position: absolute;
+    top: 82px;
+    left: 52px;
+    width: auto;
+    height: auto;
+    transform: rotate(90deg);
+}
+
+.p1-cartas-container {
+    position: absolute;
+    bottom: -4px;
+    left: 52px;
+    width: 152px;
+    height: 70px;
+    transform-origin: bottom;
+    display: flex;
+    justify-content: center;
+}
+.p2-cartas-container {
+    position: absolute;
+    top: 2px;
+    left: 52px;
+    width: 152px;
+    height: 70px;
+
+    transform-origin: 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+#p1-carta1,
+#p1-carta2,
+#p1-carta3,
+#p2-carta1,
+#p2-carta2,
+#p2-carta3 {
+    left: 0px;
+    width: 50px;
+    height: 64px;
+
+}
+
+#p1-paquete {
+    position: absolute;
+    bottom: 16px;
+    left: -32px;
+    width: auto;
+    height: auto;
+    transform: rotate(90deg);
+}
+#p2-paquete {
+    position: absolute;
+    top: 8px;
+    right: -32px;
+    width: auto;
+    height: auto;
+    transform: rotate(90deg);
+}
+
+.container-cartas-turnos{
+    position:absolute;
+    top: 78px;
+    left:130px;
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    border: none;
+  
+}
+#primera-carta, #segunda-carta{
+    
+    position: relative;
+    width: 50px;
+    height: 64px;
+    height: auto;
+    border:none;
+   
+}
+#segunda-carta{
+    border:none;
+    
+}
+
+
+.big-alert{
+    position: absolute;
+    font-size: 6px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(2);
+    color:red;
+    background-color: blue;
+    padding: 2%;
+    
+}
+
+.main-menu{
+    position: absolute;
+    font-size: 6px;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    border: solid 1px red;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 2%;
+    
+}
