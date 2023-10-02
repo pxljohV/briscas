@@ -37,7 +37,7 @@ mainMenu.addEventListener("click", () => {
 p2Carta1.src = "./assets/detras-b.gif";
 p2Carta2.src = "./assets/detras-b.gif";
 p2Carta3.src = "./assets/detras-b.gif";
-
+///test comit
 // CREATE CARDS
 const cartas = [
     { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_1.gif", back: "./assets/detras-b.gif", numero: 1, valor: 11 },
