@@ -37,57 +37,77 @@ mainMenu.addEventListener("click", () => {
 p2Carta1.src = "./assets/detras-b.gif";
 p2Carta2.src = "./assets/detras-b.gif";
 p2Carta3.src = "./assets/detras-b.gif";
-///test comit
+//Card class
+class cartaClass {
+    back = "./assets/detras-b.gif"
+    numero = 0
+    valor = 0
+    tipo = ""
+    imgSource = ""
+    constructor (tipo,numero,valor = 0) {
+        this.tipo = tipo
+        this.numero = numero
+        //valor = (numero == 1)? 11: ((numero == 3)? 10:((numero == 10)? 2:((numero == 11)? 3:(numero == 12)? 4:0)));
+        //IDK about this line, it could work
+        this.valor = valor
+        this.imgSource = `./assets/${this.tipo}_${this.numero}.gif`
+    }
+}
 // CREATE CARDS
 const cartas = [
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_1.gif", back: "./assets/detras-b.gif", numero: 1, valor: 11 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_2.gif", back: "./assets/detras-b.gif", numero: 2, valor: 0 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_3.gif", back: "./assets/detras-b.gif", numero: 3, valor: 10 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_4.gif", back: "./assets/detras-b.gif", numero: 4, valor: 0 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_5.gif", back: "./assets/detras-b.gif", numero: 5, valor: 0 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_6.gif", back: "./assets/detras-b.gif", numero: 6, valor: 0 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_7.gif", back: "./assets/detras-b.gif", numero: 7, valor: 0 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_8.gif", back: "./assets/detras-b.gif", numero: 8, valor: 0 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_9.gif", back: "./assets/detras-b.gif", numero: 9, valor: 0 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_10.gif", back: "./assets/detras-b.gif", numero: 10, valor: 2 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_11.gif", back: "./assets/detras-b.gif", numero: 11, valor: 3 },
-    { tipo: "oro", back: "./assets/detras-b.gif", imgSource: "./assets/oro_12.gif", back: "./assets/detras-b.gif", numero: 12, valor: 4 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_1.gif", back: "./assets/detras-b.gif", numero: 1, valor: 11 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_2.gif", back: "./assets/detras-b.gif", numero: 2, valor: 0 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_3.gif", back: "./assets/detras-b.gif", numero: 3, valor: 10 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_4.gif", back: "./assets/detras-b.gif", numero: 4, valor: 0 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_5.gif", back: "./assets/detras-b.gif", numero: 5, valor: 0 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_6.gif", back: "./assets/detras-b.gif", numero: 6, valor: 0 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_7.gif", back: "./assets/detras-b.gif", numero: 7, valor: 0 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_8.gif", back: "./assets/detras-b.gif", numero: 8, valor: 0 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_9.gif", back: "./assets/detras-b.gif", numero: 9, valor: 0 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_10.gif", back: "./assets/detras-b.gif", numero: 10, valor: 2 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_11.gif", back: "./assets/detras-b.gif", numero: 11, valor: 3 },
-    { tipo: "basto", back: "./assets/detras-b.gif", imgSource: "./assets/basto_12.gif", back: "./assets/detras-b.gif", numero: 12, valor: 4 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_1.gif", back: "./assets/detras-b.gif", numero: 1, valor: 11 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_2.gif", back: "./assets/detras-b.gif", numero: 2, valor: 0 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_3.gif", back: "./assets/detras-b.gif", numero: 3, valor: 10 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_4.gif", back: "./assets/detras-b.gif", numero: 4, valor: 0 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_5.gif", back: "./assets/detras-b.gif", numero: 5, valor: 0 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_6.gif", back: "./assets/detras-b.gif", numero: 6, valor: 0 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_7.gif", back: "./assets/detras-b.gif", numero: 7, valor: 0 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_8.gif", back: "./assets/detras-b.gif", numero: 8, valor: 0 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_9.gif", back: "./assets/detras-b.gif", numero: 9, valor: 0 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_10.gif", back: "./assets/detras-b.gif", numero: 10, valor: 2 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_11.gif", back: "./assets/detras-b.gif", numero: 11, valor: 3 },
-    { tipo: "copa", back: "./assets/detras-b.gif", imgSource: "./assets/copa_12.gif", back: "./assets/detras-b.gif", numero: 12, valor: 4 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_1.gif", back: "./assets/detras-b.gif", numero: 1, valor: 11 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_2.gif", back: "./assets/detras-b.gif", numero: 2, valor: 0 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_3.gif", back: "./assets/detras-b.gif", numero: 3, valor: 10 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_4.gif", back: "./assets/detras-b.gif", numero: 4, valor: 0 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_5.gif", back: "./assets/detras-b.gif", numero: 5, valor: 0 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_6.gif", back: "./assets/detras-b.gif", numero: 6, valor: 0 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_7.gif", back: "./assets/detras-b.gif", numero: 7, valor: 0 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_8.gif", back: "./assets/detras-b.gif", numero: 8, valor: 0 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_9.gif", back: "./assets/detras-b.gif", numero: 9, valor: 0 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_10.gif", back: "./assets/detras-b.gif", numero: 10, valor: 2 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_11.gif", back: "./assets/detras-b.gif", numero: 11, valor: 3 },
-    { tipo: "espada", back: "./assets/detras-b.gif", imgSource: "./assets/espada_12.gif", back: "./assets/detras-b.gif", numero: 12, valor: 4 }
+    //tipo, numero ,valor
+//Oro
+    new cartaClass("oro",1,11),
+    new cartaClass("oro",2),
+    new cartaClass("oro",3,10),
+    new cartaClass("oro",4),
+    new cartaClass("oro",5),
+    new cartaClass("oro",6),
+    new cartaClass("oro",7),
+    new cartaClass("oro",8),
+    new cartaClass("oro",9),
+    new cartaClass("oro",10,2),
+    new cartaClass("oro",11,3),
+    new cartaClass("oro",12,4),
+//Basto
+    new cartaClass("basto",1,11),
+    new cartaClass("basto",2),
+    new cartaClass("basto",3,10),
+    new cartaClass("basto",4),
+    new cartaClass("basto",5),
+    new cartaClass("basto",6),
+    new cartaClass("basto",7),
+    new cartaClass("basto",8),
+    new cartaClass("basto",9),
+    new cartaClass("basto",10,2),
+    new cartaClass("basto",11,3),
+    new cartaClass("basto",12,4),
+//copa
+    new cartaClass("copa",1,11),
+    new cartaClass("copa",2),
+    new cartaClass("copa",3,10),
+    new cartaClass("copa",4),
+    new cartaClass("copa",5),
+    new cartaClass("copa",6),
+    new cartaClass("copa",7),
+    new cartaClass("copa",8),
+    new cartaClass("copa",9),
+    new cartaClass("copa",10,2),
+    new cartaClass("copa",11,3),
+    new cartaClass("copa",12,4),
+//espada
+    new cartaClass("espada",1,11),
+    new cartaClass("espada",2),
+    new cartaClass("espada",3,10),
+    new cartaClass("espada",4),
+    new cartaClass("espada",5),
+    new cartaClass("espada",6),
+    new cartaClass("espada",7),
+    new cartaClass("espada",8),
+    new cartaClass("espada",9),
+    new cartaClass("espada",10,2),
+    new cartaClass("espada",11,3),
+    new cartaClass("espada",12,4),
 ];
 const empty = { tipo: "oro", imgSource: "./assets/empty.gif", numero: 0, valor: -1, back: "./assets/empty.gif" };
 
