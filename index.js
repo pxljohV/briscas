@@ -47,8 +47,6 @@ class cartaClass {
     constructor (tipo,numero,valor = 0) {
         this.tipo = tipo
         this.numero = numero
-        //valor = (numero == 1)? 11: ((numero == 3)? 10:((numero == 10)? 2:((numero == 11)? 3:(numero == 12)? 4:0)));
-        //IDK about this line, it could work
         this.valor = valor
         this.imgSource = `./assets/${this.tipo}_${this.numero}.gif`
     }
